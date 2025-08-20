@@ -27,18 +27,18 @@ namespace SimpleAPIApplication.Controllers
                 var user = GetUser(userData.Name, userData.Roles);
                 if (user != null)
                 {
-                    // 🔑 Create key
+                  
                     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["TokenKey"]));
                     var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-                    // 🔑 Claims
+                 
                     var claims = new List<Claim>
                     {
                         new Claim(JwtRegisteredClaimNames.Sub, user.Name!),
                         new Claim(ClaimTypes.Role, user.Roles!)
                     };
 
-                    // 🔑 Token
+                
                     var tokenDescription = new SecurityTokenDescriptor
                     {
                         Subject = new ClaimsIdentity(claims),
