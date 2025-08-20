@@ -12,7 +12,7 @@ namespace SimpleAPIApplication.Controllers
 
         public static List<User> Users = new List<User>
             {
-                new User(1,"Sankar","sankarkrishnan2002@gmail.com","Dealer")
+                new User(1,"Sankar","sankar@gmail.com","Dealer")
             };
 
         [HttpGet]
